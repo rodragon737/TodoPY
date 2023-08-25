@@ -10,15 +10,18 @@ class MainTest(TestCase):
 
         return app
     
+    ## Tes de integridad prinsipal
     def test_app_exists(self):
         self.assertIsNotNone(current_app)
 
+    ## Verificamos que la prueba es sobre Test
     def test_app_in_test_mode(self):
         self.assertTrue(current_app.config['TESTING'])
 
+    ## Redirecciones
     def test_index_redirects(self):
         response = self.client.get(url_for('index'))
-     #   self.assertRedirects(response, url_for('hello'))
+     #   self.assertRedirects(response, url_for('hello')) ## Pasa  a login
 
     def test_hello_get(self):
         response = self.client.get(url_for('hello'))
