@@ -10,11 +10,11 @@ $env:FLASK_ENV="development"
 echo -----------------------------------------------------
 pause nul
 
-echo ------------"Instalando entorno virtual"-------------
-pip install virtualenv
-echo -----------------------------------------------------
-echo ---------"Precione una tecla para continuar"---------
-pause nul
+# echo ------------"Instalando entorno virtual"-------------
+# pip install virtualenv
+# echo -----------------------------------------------------
+# echo ---------"Precione una tecla para continuar"---------
+# pause nul
 
 echo -----"Instalando requerimientos de la aplicacion"----
 pip install -r requirements.txt

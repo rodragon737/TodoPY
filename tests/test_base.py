@@ -21,18 +21,23 @@ class MainTest(TestCase):
     ## Redirecciones
     def test_index_redirects(self):
         response = self.client.get(url_for('index'))
-     #   self.assertRedirects(response, url_for('hello')) ## Pasa  a login
 
+        #self.assertRedirects(response, url_for('hello')) ##pasa a login
+
+    ## Hello
     def test_hello_get(self):
         response = self.client.get(url_for('hello'))
 
         self.assert200(response)
 
     def test_hello_post(self):
+        response = self.client.post(url_for('hello'))
 
         self.assertTrue(response.status_code, 405)
 
+    ## AUTH
     def test_auth_blueprint_exists(self):
+
         self.assertIn('auth', self.app.blueprints)
 
     def test_auth_login_get(self):

@@ -1,13 +1,13 @@
 from flask import request, make_response, redirect, render_template, session, url_for, flash
-import unittest
 from app import create_app
 from app.forms import LoginForm
 
 import unittest
 
 app = create_app()
+# BUILD APP ./app/__init__.py
 
-todos = ['Lllevar chicos al cole', 'Revisar correo', 'Daily']
+todos = ['Comprar cafe', 'Enviar solicitud de compra', 'Entregar video a productor ']
 
 
 @app.cli.command()
@@ -15,7 +15,7 @@ def test():
     tests = unittest.TestLoader().discover('tests')
     unittest.TextTestRunner().run(tests)
 
-    
+
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html', error=error)
@@ -44,7 +44,7 @@ def hello():
     context = {
         'user_ip': user_ip,
         'todos': todos,
-        'username': username,
+        'username': username
     }
 
     return render_template('hello.html', **context)
