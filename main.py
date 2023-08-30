@@ -42,7 +42,7 @@ def hello():
     context = {
         'user_ip': user_ip,
         'todos': get_todos(user_id=username),
-        'username': username
+        'username': username,
     }
 
     users = get_users()
