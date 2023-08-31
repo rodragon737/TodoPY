@@ -1,5 +1,5 @@
 # TodoPY
-![Estructura de la App</span><span>](https://github.com/rodragon737/TodoPY/blob/main/estructura_carpetas.PNG)
+![Estructura de la App</span><span>](https://github.com/rodragon737/TodoPY/blob/main/estructuras.PNG)
 ## python --version
 Python 3.11.3							
 ## comenzamos con pip
