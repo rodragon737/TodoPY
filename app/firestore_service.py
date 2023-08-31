@@ -7,7 +7,8 @@ firebase_admin.initialize_app(credential)
 
 db = firestore.client()
 
-##db.collection("users").document("user_a_borrar").delete() ##borrar usuarios
+##db.collection("users").document("rodrigo").delete() ##borrar usuarios
+##db.collection("users").document("rodrigo").collection("todos").document("x0t5rQBS1tSHLR990vGi").delete()
 
 def get_users():
     return db.collection('users').get()
@@ -15,11 +16,13 @@ def get_users():
 def get_user(user_id):
     return db.collection('users').document(user_id).get()
 
-def get_todos(user_id):
-    return db.collection('users')\
-        .document(user_id)\
-        .collection('todos').get()
-
 def user_put(user_data):
     user_ref = db.collection('users').document(user_data.username)
     user_ref.set({'password': user_data.password})
+
+def get_todos(user_id):
+    return db.collection('users').document(user_id).collection('todos').get()
+
+def put_todo(user_id, description):
+    todos_collection_ref = db.collection('users').document(user_id).collection('todos')
+    todos_collection_ref.add({'description': description})

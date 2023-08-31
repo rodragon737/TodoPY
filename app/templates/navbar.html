@@ -24,6 +24,9 @@
                 {% endif %}
                 <li><a href="{{ url_for('index') }}">Inicio</a></li>
                 <li><a href="https://github.com/rodragon737" target="_blank">Proyectos</a></li>
+                {% if current_user.is_authenticated == False %}
+                <li><a href="{{ url_for('auth.signup') }}">Crear User</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
