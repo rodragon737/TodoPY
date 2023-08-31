@@ -12,7 +12,7 @@ class TodoForm(FlaskForm):
     submit = SubmitField('Crear')
 
 class DeleteToDoForm(FlaskForm):
-    submit=SubmitField("Eliminar")
+    submit=SubmitField("Borrar")
 
 class UpdateToDoForm(FlaskForm):
     submit=SubmitField("Hecho")

@@ -32,3 +32,11 @@ $env:FLASK_ENV="development"				##Entorno de test para evitar prod
 ## Conectarse a db Firebase Google
 
 gcloud auth application-default login		##Login on GCP
+
+## Ver entorno de Gcloud
+
+gcloud config list
+
+## Creacion del deploy de proyecto en G-Cloud
+
+gcloud app deploy app.yaml
