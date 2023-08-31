@@ -6,13 +6,11 @@ from werkzeug.security import generate_password_hash, check_password_hash #Hash
 from . import auth
 
 from app.forms import LoginForm
-from app.firestore_service import get_user, user_put, get_users
+from app.firestore_service import get_user, user_put
 from app.models import UserData, UserModel
 
-#
 
 @auth.route('/login', methods=['GET','POST'])
-###
 def login():
     login_form = LoginForm()
     context = {

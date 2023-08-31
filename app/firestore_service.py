@@ -8,7 +8,7 @@ firebase_admin.initialize_app(credential)
 db = firestore.client()
 
 ##db.collection("users").document("rodrigo").delete() ##borrar usuarios
-##db.collection("users").document("rodrigo").collection("todos").document("x0t5rQBS1tSHLR990vGi").delete()
+##db.collection("users").document("rodrigo").collection("todos").document("PnvrIbqBdXdkxPsDNRlW").delete()
 
 def get_users():
     return db.collection('users').get()
