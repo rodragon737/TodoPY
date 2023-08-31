@@ -1,9 +1,9 @@
 import pyodbc
 
-SERVER = 'RR-PC'
-DATABASE = 'PyApp'
-USERNAME = 'rood'
-PASSWORD = 'roro1234'
+SERVER = 'nombreServer'
+DATABASE = 'laDB'
+USERNAME = 'userAca'
+PASSWORD = 'acaPassword'
 
 
 connectionString = f'DRIVER={{ODBC Driver 18 for SQL Server}};SERVER={SERVER};DATABASE={DATABASE};UID={USERNAME};PWD={PASSWORD}'
@@ -21,6 +21,3 @@ name DESC;
 cursor.execute(list_users)
 
 get_users = cursor.fetchall()
-
-# for r in get_users:
-#     print(f"{r.name}\t{r.passe}")
