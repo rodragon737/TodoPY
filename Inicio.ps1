@@ -45,5 +45,3 @@ echo "Para terminar el entorno Virtual ingrese Deactivate"
 echo ---"Cerrando el terminal finaliza de igual manera"---
 echo -----------------------------------------------------
 flask run
-
-gcloud auth application-default login

@@ -1,5 +1,6 @@
 flask
 flask-bootstrap
+flask-login
 flask-wtf
 flask-testing
 blinker
