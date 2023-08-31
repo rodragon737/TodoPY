@@ -9,41 +9,34 @@ from app.forms import LoginForm
 from app.firestore_service import get_user, user_put, get_users
 from app.models import UserData, UserModel
 
-# verpass = check_password_hash(get_user(password))
-
-# print(verpass)
+#
 
 @auth.route('/login', methods=['GET','POST'])
+###
 def login():
     login_form = LoginForm()
     context = {
-        'login_form': login_form
+        'login_form': LoginForm()
     }
 
-    if login_form.validate_on_submit():          
+    if login_form.validate_on_submit():
         username = login_form.username.data
-        password = login_form.username.data
-
+        password = login_form.password.data
         user_doc = get_user(username)
 
         if user_doc.to_dict() is not None:
-            password_from_db = user_doc.to_dict() ['password']
-
-            #if check_password_hash(password_from_db, password):
-            if password == password_from_db:
-                user_data = UserData(username, password)
+            
+            if check_password_hash(user_doc.to_dict()['password'], password):
+                user_data = UserData(username,password)
                 user = UserModel(user_data)
 
                 login_user(user)
-
-                flash('Bienvenido {{username}}')
-
+                flash('Hola!!')
                 redirect(url_for('hello'))
             else:
-                flash('Usuario ó password NO encontrado')
+                flash('No es el password >:(')
         else:
-            flash('Usuario NO registrado')
-          
+            flash('El usuario no se encuentra =/')
         return redirect(url_for('index'))
 
     return render_template('login.html', **context)
